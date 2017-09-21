@@ -2,14 +2,15 @@
 <html>
     <head>
         <title>Dashboard</title> 
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-        <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="font-awesome.css"/>
-        <link rel="stylesheet" type="text/css" href="font-awesome.min.css"/>
-        <link rel="stylesheet" type="text/javascript" href="bootstrap.min.js"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css')}}"/>
+        <link rel="stylesheet" type="text/javascript" href="{{ url_for('static', filename='css/bootstrap.min.js')}}"/>
 
     </head>
-    <body>  
+    <body> 
+        <div style="color:#ffffff;">
         <br>
         <div id="heading">
             <h3>
@@ -37,8 +38,7 @@
                       </tr>                      
                     </tbody>
                   </table>
-        </div> 
-           
-        
+        </div>
+    </div>      
     </body>
 </html>

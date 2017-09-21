@@ -2,12 +2,15 @@
 <html>
     <head>
         <title>Login</title> 
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-        <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css')}}"/>
+        <link rel="stylesheet" type="text/javascript" href="{{ url_for('static', filename='css/bootstrap.min.js')}}"/>
 
     </head>
     <body>  
-        <p style="width: 25%; margin-left: 70%;">
+        <p style="width: 25%; margin-left: 70%; margin-top:10%;">
             New? Register
         </p> 
         <div id="form">    
