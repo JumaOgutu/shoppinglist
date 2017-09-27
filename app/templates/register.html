@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title> 
+        <title>Register</title> 
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css')}}"/>
@@ -16,17 +16,33 @@
         <div id="form">    
         <form action="" style="margin:15px" method="post">            
                 Username:<br>
-                <input type="text" name="username" placeholder="username" value="" required>
+                <input type="text" name="username" placeholder="username" value="{{
+                    request.form.username }}" required>
                 <br>
                 Email:<br>
-                <input type="text" name="email" placeholder="email" value="" required>
+                <input type="text" name="email" placeholder="email" value="{{
+                    request.form.email }}" required>
                 <br>
                 Password:<br>
-                <input type="password" name="password" placeholder="password" value="" required>                
+                <input type="password" name="password" placeholder="password" value="{{
+                    request.form.password }}" required>                
                 <br>
                 Confirm Password:<br>
-                <input type="password" name="confirm-password" placeholder="confirm-password" value="" required>                
+                <input type="password" name="confirm_password" placeholder="confirm_password" value="{{
+                    request.form.confirm_password }}" required>                
                 <br>
+                <br>                
+                    <div class="container">
+                        {% if error%}
+                        <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dissmiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <p>{{ error }}</p>
+                        </div>
+                        {% endif%}
+                    </div>
+                    <br>
                 <button type="submit" value="Login">Register</button>
                 <br>         
                 

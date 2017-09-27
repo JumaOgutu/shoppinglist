@@ -21,6 +21,18 @@
                 Password:<br>
                 <input type="password" name="password" placeholder="password" value="" required>                
                 <br>
+                <br>                
+                    <div class="container">
+                        {% if error%}
+                        <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dissmiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <p>{{ error }}</p>
+                        </div>
+                        {% endif%}
+                    </div>
+                <br>
                 <button type="submit" value="Login">Login</button>
                 <br>         
                 
