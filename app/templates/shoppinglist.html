@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create a New Shopping List</title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css')}}"/>
+        <link rel="stylesheet" type="text/javascript" href="{{ url_for('static', filename='css/bootstrap.min.js')}}"/>
+
+    </head>
+    <body>  
+        <p style="width: 25%; margin-left: 70%; margin-top:10%;">
+            Kindly Proceed with the Generation of a New Shopping List
+        
+        </p> 
+        <div id="form">    
+        <form action="" style="margin:15px" method="post">            
+                Shopping List:<br>
+                <input type="text" name="New Shopping List Name" placeholder="New Shopping List Name" value="{{
+                    request.form.shoppinglist }}" required>
+                
+                <br>                
+                    <div class="container">
+                      
+                        <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dissmiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                   
+                        </div>
+                      
+                    </div>
+                         
+                
+        </form>
+        </div> 
+      
+    </body>
+</html>
