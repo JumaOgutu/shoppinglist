@@ -10,7 +10,7 @@
 
     </head>
     <body> 
-        <div style="color:#ffffff;">
+        <div style="color:rgb(54, 4, 61);"></div>>
         <br>
         <div id="heading">
             <h3>
@@ -31,14 +31,53 @@
                     <tbody>
                       <tr>
                         <th scope="row">1</th>
-                        <td>Back to School</td>
+                        <td>Back_to_School</td>
                         <td><i class="fa fa-edit" aria-hidden="true"></i></td>
                         <td><i class="fa fa-trash-o"></i></td>
                         <td><i class="fa fa-plus-square" aria-hidden="true"></i></td>
-                      </tr>                      
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Grocery</td>
+                        <td><i class="fa fa-edit" aria-hidden="true"></i></td>
+                        <td><i class="fa fa-trash-o"></i></td>
+                        <td><i class="fa fa-plus-square" aria-hidden="true"></i></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Electrical_Appliances</td>
+                        <td><i class="fa fa-edit" aria-hidden="true"></i></td>
+                        <td><i class="fa fa-trash-o"></i></td>
+                        <td><i class="fa fa-plus-square" aria-hidden="true"></i></td>
+                      </tr>                        
                     </tbody>
                   </table>
         </div>
-    </div>      
+    </div>  
+    
+    <div id="form"> 
+            
+            <form action="" style="margin:15px" method="post">            
+                    New Shopping_list:<br>
+                    <input type="text" name="shoppinglist" placeholder="shoppinglist" value="{{
+                        request.form.shoppinglist }}" required>
+                   
+                   
+                        <div class="container">
+                            {% if error%}
+                            <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dissmiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p>{{ error }}</p>
+                            </div>
+                            {% endif%}
+                        </div>
+                        <br>
+                    <button type="submit" value="Login">Generate Shopping List</button>
+                          
+                    
+            </form>
+            </div>     
     </body>
 </html>

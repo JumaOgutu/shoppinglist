@@ -10,39 +10,62 @@
 
     </head>
     <body>  
-        <p style="width: 25%; margin-left: 70%; margin-top:10%;">
-            Login
-        </p> 
-        <div id="form">    
-        <form action="" style="margin:15px" method="post">            
-                Username:<br>
-                <input type="text" name="username" placeholder="username" value="" required>
-                <br>
-                Password:<br>
-                <input type="password" name="password" placeholder="password" value="" required>                
-                <br>
-                <br>                
-                    <div class="container">
-                        {% if error%}
-                        <div class="alert alert-danger" role="alert">
-                        <button type="button" class="close" data-dissmiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <p>{{ error }}</p>
-                        </div>
-                        {% endif%}
-                    </div>
-                <br>
-                <button type="submit" value="Login">Login</button>
-                <br>         
-                
-        </form>
-        </div> 
-           
-        <br>           
-        <p style="width: 25%; margin-left: 85%;">
-            <a href='register'>Create Account</a>
-        </p>
-      
+        
+    <div class="jumbotron">
+         <h1>Shopping List App</h1>
+            <p class="lead"></p>
+            
+ </div>
+ <p style="width: 25%; margin-left: 70%; margin-top:1%;">
+    Login
+</p> 
+<div id="form">    
+<form action="" style="margin:15px" method="post">            
+        Username:<br>
+        <input type="text" name="username" placeholder="username" value="" required>
+        <br>
+        Password:<br>
+        <input type="password" name="password" placeholder="password" value="" required>                
+        <br>
+        <br>                
+            <div class="container">
+                {% if error%}
+                <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dissmiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p>{{ error }}</p>
+                </div>
+                {% endif%}
+            </div>
+        <br>
+        <button type="submit" value="Login">Login</button>
+        <br>         
+        
+</form>
+</div> 
+   
+<br>           
+<p style="width: 25%; margin-left: 70%;">
+    <a href='register'>Create Account/Sign Up</a>
+</p>
+
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <h2>What it does...</h2>
+                <p>The following application allows a client to create a shopping list, update it and also to be
+                    in a position to delete it.It also allows the client to add, remove or update items of choice.
+                </p>
+               
+              </div>
+              
+              
+            </div>
+          </div>
+        
+        
+       
     </body>
 </html>
