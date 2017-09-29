@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dashboard</title> 
+        <title>Dashboard</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css')}}"/>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css')}}"/>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css')}}"/>
-        <link rel="stylesheet" type="text/javascript" href="{{ url_for('static', filename='css/bootstrap.min.js')}}"/>
+        <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css')}}"/> -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" href="{{ url_for('static', filename='css/bootstrap.min.js')}}"></script>
 
     </head>
-    <body> 
-        <div style="color:rgb(54, 4, 61);"></div>>
+    <body>
+        <div style="color:rgb(54, 4, 61);"></div>
         <br>
         <div id="heading">
             <h3>
@@ -23,42 +27,36 @@
                       <tr>
                         <th>No</th>
                         <th>Shoppinglist</th>
-                        <th>Edit</th>
+                        <th>Update</th>
                         <th>Delete</th>
-                        <th>Add Items</th>
+                        <th><button type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModal">Add Items</button></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Back_to_School</td>
-                        <td><i class="fa fa-edit" aria-hidden="true"></i></td>
-                        <td><i class="fa fa-trash-o"></i></td>
-                        <td><i class="fa fa-plus-square" aria-hidden="true"></i></td>
+                        {% for item in items %}
+                        <th scope="row"></th>
+                        <td>  {{item}}</td>
+                        <td><a href="/edit/item/{{item}}"><i class="fa fa-edit" aria-hidden="true"></i></a></td>
+                        <td><a href="/delete/item/{{item}}"><i class="fa fa-trash-o"></i></a></td>
+                        <td><a href=""><i class="fa fa-plus-square" aria-hidden="true"></i></a></td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Grocery</td>
-                        <td><i class="fa fa-edit" aria-hidden="true"></i></td>
-                        <td><i class="fa fa-trash-o"></i></td>
-                        <td><i class="fa fa-plus-square" aria-hidden="true"></i></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Electrical_Appliances</td>
-                        <td><i class="fa fa-edit" aria-hidden="true"></i></td>
-                        <td><i class="fa fa-trash-o"></i></td>
-                        <td><i class="fa fa-plus-square" aria-hidden="true"></i></td>
-                      </tr>                        
+
+                    {% endfor %}
                     </tbody>
                   </table>
-                  
-                  <form action="C:\Users\OGUTU\Github\shoppinglist\app\templates\shoppinglist.html">
-                    <input type="submit" value="Generate New Shopping List">
-                    </form>
+
         </div>
-    </div>  
-    
+
+        <div class="" style="margin-left:20%">
+          <form action="" method="POST">
       
+            <input type="text" name="item" placeholder="Add item">
+            <br>
+            <input type="submit" style="width:100px;" value="create" name="create">
+            </form>
+        </div>
+    </div>
+
     </body>
 </html>

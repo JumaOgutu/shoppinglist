@@ -14,7 +14,7 @@ e_mail = []
 pass_word = []
 created_users = {} #an empty dict that stores my created users
 shoppinglist={}#dict that will store my shopping list
-itemlist={}#dict that will store my item list
+itemlist={"back to school","Grocery","Electrical appliances"}#dict that will store my item list
 
 #Function to create users
 def create_user(username, email, password, shoppinglist):#a function called create_user whose args are u,e,p and are passed when the function is called
@@ -24,27 +24,28 @@ def create_user(username, email, password, shoppinglist):#a function called crea
     created_users[username] = created_details #key is username and the value are the email and password in created details
     return created_users#the function returns this and is stored in the dict
 
-def add_shoppinglist(title, items): #function that adds a new shopping list
-
-    slist=S_list(title, items) #slist is the instance of the class S_list
-    shopping_lists.append(slist)#adds a shopping list to others
-    
-    return True
-
+def confirm_user_is_logged_in():
+    '''check if the user id logged in, if not redirect to index for login'''
+    if not session.get("logged_in"):
+        return redirect(url_for('index'))
+  
 
 @app.route('/', methods=['GET', 'POST']) #route decorator binds my function "index" to a URL
 def index():
+    '''login page'''
     error = None
     if request.method == 'POST':
         name = request.form['username']
         word = request.form['password']
-
+        print (name)
+        print (word)
+        print (user_name)
         
         if name in user_name:
             if word in pass_word:
                 session['logged_in'] = True
                 session['id'] = name
-                return redirect('/')
+                return redirect('/dashboard')
             else:
                 error = 'Enter correct password'
         else:
@@ -54,6 +55,7 @@ def index():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    '''sign up page'''
     error = None
     if request.method == 'POST':
         username = request.form['username']  #After you enter the username and password and click submit the route will be invoked again as a POST request and both request.form['username'] and request.form['password'] will be set to the values entered by the user.
@@ -84,8 +86,44 @@ def register():
     
     return render_template("register.html", error = error)
 
-@app.route('/dashboard')
+
+
+@app.route('/logout')
+def logout():
+    '''logout page'''
+    session["logged_in"] = False
+    return redirect(url_for('index'))
+
+
+@app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
-    return render_template("dashboard.html")
-    
-    
+    if request.method == 'POST':
+        itemlist.add(request.form['item'].strip())
+    return render_template("dashboard.html",items=itemlist)
+
+
+@app.route('/delete/item/<id>', methods=['GET', 'POST'])
+def deleteItem(id):
+    print (itemlist.remove(id))
+   
+    itemlist.remove(request.form['item'].strip())
+
+    return render_template("dashboard.html",items=itemlist)
+
+@app.route('/add/item/<id>', methods=['GET', 'POST'])
+def addItem(id):
+    if request.method == 'POST':
+        for x in itemlist:
+            if x == id:
+
+                itemlist.add(request.form['item'].strip())
+
+
+
+        print (request.form['item'])
+        print (itemlist)
+        return redirect('/dashboard')
+
+
+    return render_template("editList.html",item=id)
+   

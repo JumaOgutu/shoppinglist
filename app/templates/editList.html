@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css')}}"/>
+        <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css')}}"/> -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script
+  			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  			  crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/javascript" href="{{ url_for('static', filename='css/bootstrap.min.js')}}"/>
+
+    </head>
+    <body>
+        <div style="color:rgb(54, 4, 61);"></div>
+        <br>
+        <div id="heading">
+            <h3>
+                Welcome to your dashboard
+            </h3>
+        </div>
+        <div style="margin: auto; width: 50%;">
+                  <form action="" method="POST">
+                    <input type="text" name="item" value="{{item}}">
+                    <input type="submit" value="update" name="update">
+                    </form>
+        </div>
+    </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </body>
+</html>
